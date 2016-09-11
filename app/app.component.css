@@ -1,7 +1,7 @@
 .ngh-app-bar {
     width: 100%;
     height: 50px;
-    background-color: #888;
+    background-color: #009688;
 }
 
 .ngh-sidenav-toggle {
@@ -15,11 +15,19 @@ md-sidenav.ngh-sidenav-left {
 
 button.ngh-sidenav-toggle {
     border: none;
-    background-color: #888;
+    background-color: #009688;
     outline: none;
     color: white;
 }
 
 button.ngh-sidenav-toggle:hover {
-    background-color: #999;
+    background-color: #26A69A;
+}
+
+.ngh-app-bar .ngh-title {
+    font-family: "Segoe UI", Helvetica, sans-serif;
+    font-size: 20px;
+    color: white;
+    line-height: 50px;
+    vertical-align: top;
 }

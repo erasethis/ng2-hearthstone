@@ -1,9 +1,18 @@
-.result { 
+.ngh-search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    margin: 50px auto;
+}
+
+.ngh-search-result { 
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
-.card img {
+.ngh-card img {
     max-width: 200px;
 }

@@ -25,7 +25,9 @@
 
       // angular2-material
       '@angular2-material/core': 'npm:@angular2-material/core/core.umd.js',
+      '@angular2-material/button': 'npm:@angular2-material/button/button.umd.js',
       '@angular2-material/icon': 'npm:@angular2-material/icon/icon.umd.js',
+      '@angular2-material/input': 'npm:@angular2-material/input/input.umd.js',
       '@angular2-material/sidenav': 'npm:@angular2-material/sidenav/sidenav.umd.js',
 
       // other libraries

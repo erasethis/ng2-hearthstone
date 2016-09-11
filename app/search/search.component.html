@@ -1,8 +1,10 @@
 <div>
-    <input type="text" [(ngModel)]="model.term">
-    <button (click)="click()">Search</button>
-    <div class="result" *ngIf="model.result">
-        <div class="card" *ngFor="let card of model.result">
+    <div class="ngh-search-form">
+        <md-input type="text" [(ngModel)]="model.term" placeholder="Search Text"></md-input>
+        <button md-raised-button color="primary" (click)="click()">Search</button>
+    </div>
+    <div class="ngh-search-result" *ngIf="model.result">
+        <div class="ngh-card" *ngFor="let card of model.result">
             <img [src]="card.imgGold" />
         </div>
     </div>

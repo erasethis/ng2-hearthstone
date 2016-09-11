@@ -5,8 +5,10 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { Routes, RouterModule }  from '@angular/router';
 
+import { MdButtonModule }  from '@angular2-material/button';
 import { MdCoreModule }    from '@angular2-material/core';
 import { MdIcon, MdIconRegistry }    from '@angular2-material/icon';
+import { MdInputModule }   from '@angular2-material/input';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 
 import { CardsModule }   from './cards/cards.module';
@@ -27,7 +29,9 @@ import {
       HttpModule,
       RouterModule, 
       // 
+      MdButtonModule,
       MdCoreModule,
+      MdInputModule,
       MdSidenavModule,
       //
       CardsModule,

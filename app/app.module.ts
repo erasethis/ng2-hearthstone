@@ -5,6 +5,10 @@ import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { Routes, RouterModule }  from '@angular/router';
 
+import { MdCoreModule }    from '@angular2-material/core';
+import { MdIcon, MdIconRegistry }    from '@angular2-material/icon';
+import { MdSidenavModule } from '@angular2-material/sidenav';
+
 import { CardsModule }   from './cards/cards.module';
 
 import { AppComponent }  from './app.component';
@@ -16,21 +20,27 @@ import {
 } from './app.routing';
 
 @NgModule({
-  imports:      [ 
+  imports: [ 
       BrowserModule, 
       CommonModule, 
       FormsModule,
       HttpModule,
       RouterModule, 
+      // 
+      MdCoreModule,
+      MdSidenavModule,
       //
       CardsModule,
       routing
   ],
   declarations: [ 
       AppComponent,
+      MdIcon,
       SearchComponent
   ],
   bootstrap:    [ AppComponent ],
-  providers:    [ appRoutingProviders ]
+  providers:    [ 
+      MdIconRegistry,
+      appRoutingProviders ]
 })
 export class AppModule { }

@@ -1,0 +1,9 @@
+<div>
+    <input type="text" [(ngModel)]="model.term">
+    <button (click)="click()">Search</button>
+    <div class="result" *ngIf="model.result">
+        <div class="card" *ngFor="let card of model.result">
+            <img [src]="card.imgGold" />
+        </div>
+    </div>
+</div>

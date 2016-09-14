@@ -32,7 +32,10 @@
 
       // other libraries
       'rxjs': 'npm:rxjs',
-      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
+      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
+      'ng2-redux': 'npm:ng2-redux',
+      'redux': 'npm:redux',
+      'redux-logger': 'npm:redux-logger'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -40,11 +43,23 @@
         main: './main.js',
         defaultExtension: 'js'
       },
-      rxjs: {
-        defaultExtension: 'js'
-      },
       'angular2-in-memory-web-api': {
         main: './index.js',
+        defaultExtension: 'js'
+      },
+      'ng2-redux': {
+        main: './lib/index.js',
+        defaultExtension: 'js'
+      },
+      'redux': {
+        main: './dist/redux.js',
+        defaultExtension: 'js'
+      },
+      'redux-logger': {
+        main: './dist/index.js',
+        defaultExtension: 'js'
+      },
+      'rxjs': {
         defaultExtension: 'js'
       }
     }

@@ -11,6 +11,12 @@ import { MdIcon, MdIconRegistry }    from '@angular2-material/icon';
 import { MdInputModule }   from '@angular2-material/input';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 
+import { NgReduxModule, NgRedux } from 'ng2-redux';
+import { searchReducer } from './store/search.reducer';
+import * as createLogger from 'redux-logger';
+
+interface IAppState { /* ... */ };
+
 import { CardsModule }   from './cards/cards.module';
 
 import { AppComponent }  from './app.component';
@@ -34,6 +40,8 @@ import {
       MdInputModule,
       MdSidenavModule,
       //
+      NgReduxModule,
+      //
       CardsModule,
       routing
   ],
@@ -47,4 +55,8 @@ import {
       MdIconRegistry,
       appRoutingProviders ]
 })
-export class AppModule { }
+export class AppModule { 
+    constructor(ngRedux: NgRedux<IAppState>) {
+        ngRedux.configureStore(searchReducer, {}, [ createLogger() ]);
+    }
+}

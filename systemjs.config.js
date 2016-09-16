@@ -35,7 +35,8 @@
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
       'ng2-redux': 'npm:ng2-redux',
       'redux': 'npm:redux',
-      'redux-logger': 'npm:redux-logger'
+      'redux-logger': 'npm:redux-logger',
+      'redux-thunk': 'npm:redux-thunk'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
@@ -57,6 +58,10 @@
       },
       'redux-logger': {
         main: './dist/index.js',
+        defaultExtension: 'js'
+      },
+      'redux-thunk': {
+        main: './dist/redux-thunk.js',
         defaultExtension: 'js'
       },
       'rxjs': {

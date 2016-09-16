@@ -1,9 +1,12 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Response } from '@angular/http';
+import { NgRedux } from 'ng2-redux';
 
-import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
 
+import { IAppState } from '../store/app-state.model';
 import { CardsService } from '../cards/cards.service';
+import { SearchCardsActions } from '../actions/actions';
 
 declare var module: {
     id: string;
@@ -15,21 +18,22 @@ declare var module: {
     templateUrl: './search.component.html',
     styleUrls: ['search.component.css']
 })
-export class SearchComponent implements OnDestroy {
-    model: { term: string, result: string } = { term: '', result: '' };
-    private _sub: Subscription;
-    private _currentTerm: string = '';
-    constructor(private _cardsService: CardsService) {}
-    click() {
-        if (this.model.term && this.model.term != this._currentTerm)
-        this._sub = this._cardsService.search(this.model.term).subscribe((response: Response) => {
-            this.model.result = response.json(); 
-            this._currentTerm = this.model.term;
-        });
+export class SearchComponent {
+    model: { keyword: string, result: Observable<any[]> }
+    search$: any;
+
+    private previousKeyword: string = '';
+
+    constructor(private ngRedux: NgRedux<IAppState>, private searchActions: SearchCardsActions) {
+        this.search$ = this.ngRedux.select(state => state.searchCards.items);
+        this.model = {
+            keyword: '',
+            result: this.search$
+        }
     }
-    ngOnDestroy() {
-        if (this._sub) {
-            this._sub.unsubscribe();
+    click() {
+        if (this.model.keyword && this.model.keyword != this.previousKeyword) {
+            this.searchActions.search(this.model.keyword)(this.ngRedux.dispatch);
         }
     }
 }

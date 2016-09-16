@@ -12,10 +12,11 @@ import { MdInputModule }   from '@angular2-material/input';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 
 import { NgReduxModule, NgRedux } from 'ng2-redux';
-import { searchReducer } from './store/search.reducer';
+import { ng2HearthstoneApp } from './store/ng2-hearthstone.app';
 import * as createLogger from 'redux-logger';
-
-interface IAppState { /* ... */ };
+import thunkMiddleware from 'redux-thunk'
+import { IAppState } from './store/app-state.model'
+import { SearchCardsActions } from './actions/search-cards.actions';
 
 import { CardsModule }   from './cards/cards.module';
 
@@ -53,10 +54,17 @@ import {
   bootstrap:    [ AppComponent ],
   providers:    [ 
       MdIconRegistry,
+      SearchCardsActions,
       appRoutingProviders ]
 })
 export class AppModule { 
     constructor(ngRedux: NgRedux<IAppState>) {
-        ngRedux.configureStore(searchReducer, {}, [ createLogger() ]);
+        ngRedux.configureStore(ng2HearthstoneApp, { 
+            searchCards: { 
+                searching: false, 
+                keyword: '', 
+                items: []
+            }
+        }, [thunkMiddleware, createLogger()]);
     }
 }

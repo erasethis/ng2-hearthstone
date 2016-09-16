@@ -1,0 +1,1 @@
+export { ISearchCardsState, searchCards } from './search-cards.reducer';

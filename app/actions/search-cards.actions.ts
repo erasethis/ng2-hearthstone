@@ -4,25 +4,24 @@ import { NgRedux } from 'ng2-redux';
 import { CardsService } from '../cards/cards.service';
 
 export const SEARCH_CARDS_ACTIONS = {
-  REQUEST: 'REQUEST',
-  RECEIVE: 'RECEIVE'
+  REQUEST: 'SEARCH_REQUEST',
+  RECEIVE: 'SEARCH_RESULT_RECEIVE'
 };
 
 import { Injectable } from '@angular/core';
 @Injectable()
 export class SearchCardsActions {
   constructor(private ngRedux: NgRedux<any>, private service: CardsService) {
-      
+
   }
 
   // Call out to thunk middleware
   search(keyword: string) {
-    let that = this;
-    return function (dispatch) {
-      dispatch(that.request(keyword));
+    return (dispatch) => {
+      dispatch(this.request(keyword));
 
-      return that.service.search(keyword).subscribe((response: Response) => {
-        dispatch(that.receive(<any[]>response.json()));
+      return this.service.search(keyword).subscribe((response: Response) => {
+        dispatch(this.receive(<any[]>response.json()));
       });
 
       // TODO: Error handling

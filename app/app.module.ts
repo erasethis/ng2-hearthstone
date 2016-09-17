@@ -9,6 +9,7 @@ import { MdButtonModule }  from '@angular2-material/button';
 import { MdCoreModule }    from '@angular2-material/core';
 import { MdIcon, MdIconRegistry }    from '@angular2-material/icon';
 import { MdInputModule }   from '@angular2-material/input';
+import { MdMenuModule }    from '@angular2-material/menu';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 
 import { NgReduxModule, NgRedux } from 'ng2-redux';
@@ -39,6 +40,7 @@ import {
       MdButtonModule,
       MdCoreModule,
       MdInputModule,
+      MdMenuModule,
       MdSidenavModule,
       //
       NgReduxModule,

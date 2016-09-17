@@ -2,11 +2,19 @@
     <md-sidenav-layout>
         <div class="ngh-app-bar">
             <button class="ngh-sidenav-toggle" #toggle (click)="left.open()">
-            <md-icon>menu</md-icon>
-          </button>
+                <md-icon>menu</md-icon>
+            </button>
             <span class="ngh-title">Angular 2 Hearthstone</span>
         </div>
-        <md-sidenav class="ngh-sidenav-left" #left></md-sidenav>
+        <md-sidenav class="ngh-sidenav-left" #left>
+            <div>
+                <img src="/assets/images/yogg-saron.png" alt="Background"/>
+            </div>
+            <ul>
+                <li><a href="#" md-button><md-icon class="md-24">stars</md-icon><span>Heroes</span></a></li>
+                <li><a href="#" md-button><md-icon class="md-24">collections</md-icon><span>Card Sets</span></a></li>
+            </ul>
+        </md-sidenav>
         <router-outlet></router-outlet>
     </md-sidenav-layout>
 </div>

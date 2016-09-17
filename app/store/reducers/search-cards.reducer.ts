@@ -14,13 +14,13 @@ const INIT_STATE: ISearchCardsState = {
 
 export function searchCards(state = INIT_STATE, action): ISearchCardsState {
   switch (action.type) {
-    case SEARCH_CARDS_ACTIONS.REQUEST:
+    case SEARCH_CARDS_ACTIONS.SEARCH_CARDS_REQUEST:
       return Object.assign({}, state, {
         searching: true,
         keyword: action.payload,
         items: state.items
       });
-    case SEARCH_CARDS_ACTIONS.RECEIVE:
+    case SEARCH_CARDS_ACTIONS.SEARCH_CARDS_FETCH_RESULT:
       let items = action.payload.items;
       return Object.assign({}, state, {
         searching: state.searching,

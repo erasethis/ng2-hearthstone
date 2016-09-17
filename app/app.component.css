@@ -34,7 +34,7 @@ button.ngh-sidenav-toggle:hover {
 }
 
 md-sidenav ul {
-    margin: 0;
+    margin: 0.5em 0;
     padding: 0;
 }
 
@@ -45,6 +45,10 @@ md-sidenav ul li a {
     height: 3em;
     border-radius: 0;
     padding: 0.25em 0.5em;
+}
+
+md-sidenav ul li a[md-button].active {
+    color: #009688;
 }
 
 md-sidenav ul li a[md-button] span {

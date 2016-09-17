@@ -1,14 +1,13 @@
+import { Injectable } from '@angular/core';
 import { Response } from '@angular/http';
-
 import { NgRedux } from 'ng2-redux';
 import { CardsService } from '../cards/cards.service';
 
 export const SEARCH_CARDS_ACTIONS = {
-  REQUEST: 'SEARCH_REQUEST',
-  RECEIVE: 'SEARCH_RESULT_RECEIVE'
+  SEARCH_CARDS_REQUEST: 'SEARCH_CARDS_REQUEST',
+  SEARCH_CARDS_FETCH_RESULT: 'SEARCH_CARDS_FETCH_RESULT'
 };
 
-import { Injectable } from '@angular/core';
 @Injectable()
 export class SearchCardsActions {
   constructor(private ngRedux: NgRedux<any>, private service: CardsService) {
@@ -21,7 +20,7 @@ export class SearchCardsActions {
       dispatch(this.request(keyword));
 
       return this.service.search(keyword).subscribe((response: Response) => {
-        dispatch(this.receive(<any[]>response.json()));
+        dispatch(this.fetchResult(<any[]>response.json()));
       });
 
       // TODO: Error handling
@@ -29,16 +28,20 @@ export class SearchCardsActions {
   }
 
   // Action Creators
-  private request(keyword: string) {
+  private request(keyword: string, collectible?: boolean, locale?: string) {
     return {
-      type: SEARCH_CARDS_ACTIONS.REQUEST,
-      payload: keyword
+      type: SEARCH_CARDS_ACTIONS.SEARCH_CARDS_REQUEST,
+      payload: {
+        keyword,
+        collectible,
+        locale
+      }
     };
   }
 
-  private receive(items: any[]) {
+  private fetchResult(items: any[]) {
     return {
-      type: SEARCH_CARDS_ACTIONS.RECEIVE,
+      type: SEARCH_CARDS_ACTIONS.SEARCH_CARDS_FETCH_RESULT,
       payload: {
         items: items
       }

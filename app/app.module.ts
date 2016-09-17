@@ -1,14 +1,12 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule }  from '@angular/common';
-import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { Routes, RouterModule }  from '@angular/router';
 
 import { MdButtonModule }  from '@angular2-material/button';
 import { MdCoreModule }    from '@angular2-material/core';
 import { MdIcon, MdIconRegistry }    from '@angular2-material/icon';
-import { MdInputModule }   from '@angular2-material/input';
 import { MdMenuModule }    from '@angular2-material/menu';
 import { MdSidenavModule } from '@angular2-material/sidenav';
 
@@ -17,29 +15,26 @@ import { ng2HearthstoneApp } from './store/ng2-hearthstone.app';
 import * as createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk'
 import { IAppState } from './store/app-state.model'
-import { SearchCardsActions } from './actions/search-cards.actions';
 
 import { CardsModule }   from './cards/cards.module';
 
 import { AppComponent }  from './app.component';
-import { SearchComponent } from './search/search.component';
 
 import { 
-    routing, 
-    appRoutingProviders 
+    routing
 } from './app.routing';
+
+import { appRoutingProviders } from './app.routing';
 
 @NgModule({
   imports: [ 
       BrowserModule, 
-      CommonModule, 
-      FormsModule,
+      CommonModule,
       HttpModule,
       RouterModule, 
       // 
       MdButtonModule,
       MdCoreModule,
-      MdInputModule,
       MdMenuModule,
       MdSidenavModule,
       //
@@ -50,14 +45,13 @@ import {
   ],
   declarations: [ 
       AppComponent,
-      MdIcon,
-      SearchComponent
+      MdIcon
   ],
-  bootstrap:    [ AppComponent ],
-  providers:    [ 
+  bootstrap: [AppComponent],
+  providers: [ 
       MdIconRegistry,
-      SearchCardsActions,
-      appRoutingProviders ]
+      appRoutingProviders
+  ]
 })
 export class AppModule { 
     constructor(ngRedux: NgRedux<IAppState>) {

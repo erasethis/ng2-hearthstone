@@ -4,9 +4,9 @@ import { NgRedux } from 'ng2-redux';
 
 import { Observable } from 'rxjs/Observable';
 
-import { IAppState } from '../store/app-state.model';
-import { CardsService } from '../cards/cards.service';
-import { SearchCardsActions } from '../actions/actions';
+import { IAppState } from '../../store/app-state.model';
+import { CardsService } from '../cards.service';
+import { SearchCardsActions } from '../../actions/actions';
 
 declare var module: {
     id: string;

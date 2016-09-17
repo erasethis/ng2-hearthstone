@@ -9,8 +9,12 @@ const BaseUrl: string = 'https://omgvamp-hearthstone-v1.p.mashape.com/';
 @Injectable()
 export class CardsService {
     constructor(private _http: Http) {}
-    search(name: string): Observable<Response> {
-        return this._api('cards/search/' + name);
+    get(type: string, attack?: number, collectible?: boolean, cost?: number,
+        durability?: number, health?: number, locale?: string): Observable<Response> {
+        return this._api('cards/'+ type);
+    }
+    search(keyword: string, collectible?: boolean, locale?: string): Observable<Response> {
+        return this._api('cards/search/' + keyword);
     }
     private _api(relativeUrl: string): Observable<Response> {
         let url = BaseUrl + relativeUrl;

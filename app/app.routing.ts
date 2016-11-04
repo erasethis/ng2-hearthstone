@@ -1,12 +1,8 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const appRoutes: Routes = [
-
+export const appRoutes: Routes = [
+    { path: '', redirectTo: 'cards', pathMatch: 'full' },
+    { path: 'cards', loadChildren: 'app/cards/cards.module#CardsModule' },
+    // { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
-
-export const appRoutingProviders: any[] = [
-
-];
-
-export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

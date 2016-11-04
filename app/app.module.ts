@@ -19,19 +19,14 @@ import { IAppState } from './store/app-state.model'
 import { CardsModule }   from './cards/cards.module';
 
 import { AppComponent }  from './app.component';
-
-import { 
-    routing
-} from './app.routing';
-
-import { appRoutingProviders } from './app.routing';
+import { appRoutes } from './app.routing';
 
 @NgModule({
   imports: [ 
       BrowserModule, 
       CommonModule,
       HttpModule,
-      RouterModule, 
+      RouterModule.forRoot(appRoutes), 
       // 
       MdButtonModule,
       MdCoreModule,
@@ -40,8 +35,7 @@ import { appRoutingProviders } from './app.routing';
       //
       NgReduxModule,
       //
-      CardsModule,
-      routing
+      CardsModule
   ],
   declarations: [ 
       AppComponent,
@@ -49,8 +43,7 @@ import { appRoutingProviders } from './app.routing';
   ],
   bootstrap: [AppComponent],
   providers: [ 
-      MdIconRegistry,
-      appRoutingProviders
+      MdIconRegistry
   ]
 })
 export class AppModule { 

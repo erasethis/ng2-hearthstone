@@ -1,32 +1,16 @@
-import { ModuleWithProviders } from '@angular/core';
-
-import { 
-    RouterModule,
-    Routes
-} from '@angular/router';
-
+import { Routes } from '@angular/router';
 import { CardsComponent } from './cards.component';
 import { SearchComponent } from './search/search.component';
 import { SetsComponent } from './sets/sets.component';
 
-const cardsRoutes: Routes = [
-  {
-    path: 'cards',
-    component: CardsComponent,
-    children: [
-      {
-        path: '',
+export const cardsRoutes: Routes = [
+    {
+        path: 'cards',
+        component: CardsComponent,
         children: [
-          { path: 'sets', component: SetsComponent },
-          { path: 'search', component: SearchComponent }
+            { path: 'heroes', loadChildren: 'app/cards/heroes/heroes.module#HeroesModule' },
+            { path: 'sets', component: SetsComponent },
+            { path: 'search', component: SearchComponent }
         ]
-      }
-    ]
-  }
+    }
 ];
-
-export const cardsRoutingProviders: any[] = [
-
-];
-
-export const cardsRouting: ModuleWithProviders = RouterModule.forChild(cardsRoutes);

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
-import { MdButtonModule }  from '@angular2-material/button';
-import { MdCoreModule }    from '@angular2-material/core';
-import { MdInputModule }   from '@angular2-material/input';
+import { MdButtonModule } from '@angular2-material/button';
+import { MdCoreModule } from '@angular2-material/core';
+import { MdInputModule } from '@angular2-material/input';
 
 import { HeroesModule } from './heroes/heroes.module';
 
@@ -16,25 +16,20 @@ import { CardsService } from './cards.service';
 import { SearchCardsActions } from '../actions/search-cards.actions';
 import { SearchComponent } from './search/search.component';
 import { SetsComponent } from './sets/sets.component';
-
-import { cardsRouting } from './cards.routing';
-
-import { cardsRoutingProviders } from './cards.routing';
+import { cardsRoutes } from './cards.routing';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         HttpModule,
-        RouterModule,
+        RouterModule.forChild(cardsRoutes),
         //
         MdButtonModule,
         MdCoreModule,
         MdInputModule,
         //
         HeroesModule,
-        //
-        cardsRouting
     ],
     declarations: [
         CardsComponent,
@@ -43,9 +38,8 @@ import { cardsRoutingProviders } from './cards.routing';
     ],
     providers: [
         CardsService,
-        SearchCardsActions,
-        cardsRoutingProviders
+        SearchCardsActions
     ]
 })
-export class CardsModule {}
+export class CardsModule { }
 

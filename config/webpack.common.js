@@ -176,7 +176,7 @@ module.exports = function (options) {
        * See: https://github.com/webpack/docs/wiki/optimization#multi-page-app
        */
       new CommonsChunkPlugin({
-        name: ['polyfills', 'vendor'].reverse()
+        name: ['app', 'polyfills', 'vendor'].reverse()
       }),
 
       /**

@@ -3,15 +3,16 @@ import { BrowserModule }          from '@angular/platform-browser';
 import { CommonModule }           from '@angular/common';
 import { HttpModule }             from '@angular/http';
 import { MaterialModule }         from '@angular/material';
-import { Routes, RouterModule }   from '@angular/router';
+import { RouterModule }           from '@angular/router';
+
+import { HomeModule }             from './home/home.module';
+import { CardsModule }            from './cards/cards.module';
 
 import { NgReduxModule, NgRedux } from 'ng2-redux';
 import { ng2HearthstoneApp }      from './store/ng2-hearthstone.app';
 import * as createLogger          from 'redux-logger';
 import thunkMiddleware            from 'redux-thunk'
 import { IAppState }              from './store/app-state.model'
-
-import { CardsModule }            from './cards/cards.module';
 
 import { AppComponent }           from './app.component';
 import { appRoutes }              from './app.routing';
@@ -26,6 +27,7 @@ import { appRoutes }              from './app.routing';
       //
       NgReduxModule,
       //
+      HomeModule,
       CardsModule
   ],
   declarations: [ 

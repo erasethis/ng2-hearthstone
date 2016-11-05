@@ -8,8 +8,8 @@ export const cardsRoutes: Routes = [
         path: 'cards',
         component: CardsComponent,
         children: [
-            { path: '', redirectTo: 'search' },
-            { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' },
+            { path: '', redirectTo: 'sets' },
+            { path: 'heroes', loadChildren: './+heroes/heroes.module#HeroesModule' },
             { path: 'sets', component: SetsComponent },
             { path: 'search', component: SearchComponent }
         ]

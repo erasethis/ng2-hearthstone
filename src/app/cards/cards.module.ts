@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
+import { HeroesModule } from './heroes/heroes.module';
+
 import { CardsComponent } from './cards.component';
 import { CardsService } from './cards.service';
 import { SearchCardsActions } from '../actions/search-cards.actions';
@@ -18,7 +20,9 @@ import { cardsRoutes } from './cards.routing';
         FormsModule,
         HttpModule,
         MaterialModule,
-        RouterModule.forChild(cardsRoutes)
+        RouterModule.forChild(cardsRoutes),
+        //
+        HeroesModule
     ],
     declarations: [
         CardsComponent,

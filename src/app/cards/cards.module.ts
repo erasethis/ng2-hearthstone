@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/npm_material';
+import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
 import { CardsComponent } from './cards.component';

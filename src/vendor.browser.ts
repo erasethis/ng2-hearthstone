@@ -12,7 +12,7 @@ import '@angular/core';
 import '@angular/common';
 import '@angular/forms';
 import '@angular/http';
-import '@angular/npm_material';
+import '@angular/material';
 import '@angular/router';
 
 // AngularClass

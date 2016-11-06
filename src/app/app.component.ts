@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MdIconRegistry } from '@angular/material';
+import { MdIconRegistry } from '@angular/npm_material';
 
 @Component({
   selector: 'ngh-app',

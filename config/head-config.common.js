@@ -16,6 +16,7 @@
 module.exports = {
   link: [
     { rel: 'stylesheet', href: '/assets/css/site.css' },
+    { rel: 'stylesheet', href: '/assets/css/deeppurple-amber.css' },
 
     /** <link> tags for android web app icons **/
     /*{ rel: 'icon', type: 'image/png', sizes: '192x192', href: '/assets/icon/android-icon-192x192.png' },*/

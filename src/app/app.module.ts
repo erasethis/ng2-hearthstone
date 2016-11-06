@@ -2,7 +2,7 @@ import { NgModule }               from '@angular/core';
 import { BrowserModule }          from '@angular/platform-browser';
 import { CommonModule }           from '@angular/common';
 import { HttpModule }             from '@angular/http';
-import { MaterialModule }         from '@angular/material';
+import { MaterialModule }         from '@angular/npm_material';
 import { RouterModule }           from '@angular/router';
 
 import { HomeModule }             from './home/home.module';

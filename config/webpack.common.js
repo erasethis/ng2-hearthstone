@@ -4,6 +4,7 @@
 
 const webpack = require('webpack');
 const helpers = require('./helpers');
+const path = require('path');
 
 /*
  * Webpack Plugins
@@ -122,8 +123,8 @@ module.exports = function (options) {
          *
          */
         {
-          test: /\.css$/,
-          loaders: ['to-string-loader', 'css-loader']
+            test: /\.css$/,
+            loaders: ['to-string', 'css']
         },
 
         /* Raw loader support for *.html

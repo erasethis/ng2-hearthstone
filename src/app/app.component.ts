@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { MdIconRegistry } from '@angular/material';
 
+
+require('!!style!css!../assets/css/site.css');
+require('!!style!css!../assets/css/deeppurple-amber.css');
+
 @Component({
   selector: 'ngh-app',
   templateUrl: './app.component.html',

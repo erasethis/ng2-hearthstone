@@ -59,7 +59,3 @@ md-sidenav ul li a[md-button] span {
     vertical-align: top;
     margin-left: 1em;
 }
-
-md-sidenav ul li a md-icon {
-    line-height: 1.46em;
-}

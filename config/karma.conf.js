@@ -40,6 +40,10 @@ module.exports = function(config) {
       type: 'in-memory'
     },
 
+    mochaReporter: {
+        output: 'noFailures'
+    },
+
     remapCoverageReporter: {
       'text-summary': null,
       json: './coverage/coverage.json',
@@ -55,7 +59,7 @@ module.exports = function(config) {
      * possible values: 'dots', 'progress'
      * available reporters: https://npmjs.org/browse/keyword/karma-reporter
      */
-    reporters: [ 'mocha', 'coverage', 'remap-coverage' ],
+    reporters: [ 'kjhtml', 'mocha', 'coverage' ],
 
     // web server port
     port: 9876,

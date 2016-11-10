@@ -1,6 +1,5 @@
-import {
-    Component
-} from '@angular/core';
+import { Component } from '@angular/core';
+import { NgRedux, select } from 'ng2-select';
 
 @Component({
     selector: 'ngh-heroes-list',

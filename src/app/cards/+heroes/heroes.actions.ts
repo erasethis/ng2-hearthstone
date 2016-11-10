@@ -4,7 +4,7 @@ export const HEROES_ACTIONS = {
 };
 
 export interface ICardsService {
-    getHeroes(): any;
+    get(type: string): any;
 };
 
 export class HeroesActions {
@@ -16,7 +16,7 @@ export class HeroesActions {
                 type: HEROES_ACTIONS.HEROES_REQUEST,
                 payload: { }
             });
-            let heroes$ = this.cardsService.getHeroes();
+            let heroes$ = this.cardsService.get('hero');
             dispatch({
                 type: HEROES_ACTIONS.HEROES_FETCH_RESULT,
                 payload: { 
